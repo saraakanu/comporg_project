@@ -23,3 +23,9 @@ input_loop:
     li $t1, 25              # load immediate 25
     blt $t0, $t1, illegal_number # if N < 25, branch to illegal_number
 
+    #Step 2: Calculate and print Fibonacci sequence
+    li $t0, 4               # syscall 4 for ptint_str
+    la $a0, fib_msg         # load address of fib_msg
+    syscall
+
+
