@@ -27,5 +27,9 @@ input_loop:
     li $t0, 4               # syscall 4 for ptint_str
     la $a0, fib_msg         # load address of fib_msg
     syscall
+    li $t2, 0               # initialize first Fibonacci number
+    li $t3, 1               # initialize second Fibonacci number
+    move $t4, $t0           # counter for loop (N)
 
+    fib_loop:
 
