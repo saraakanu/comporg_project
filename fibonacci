@@ -37,3 +37,8 @@ input_loop:
         syscall             
 
         add $t5, $t2, $t3   # $t5 = $t2 + $t3
+        move $t2, $t3       # update $t2 to the next number in sequence
+        move $t3, $t5       # update $t3 to the newly calculated number
+
+        li $v0, 4           # sysycall 4 for print_str
+        la $a0, newline     # load address of newline
