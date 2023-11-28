@@ -48,7 +48,6 @@ input_loop:
         subi $t4, $t4, 1    # decrement counter
         bnez $t4, fib_loop  # loop if not yet reached N
 
-
    # Exit program
     li $v0, 10              # syscall 10 for exit
     syscall
@@ -58,4 +57,6 @@ illegal_number:
     li $v0, 4               # syscall 4 for print_str
     la $a0, error           # load address of error
     syscall                 
-
+  
+    # Repeat input loop for a legal number
+    j input_loop            # jump back to input_loop
