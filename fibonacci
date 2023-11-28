@@ -26,6 +26,7 @@ input_loop:
     #Step 2: Calculate and print Fibonacci sequence
     li $t0, 4               # syscall 4 for ptint_str
     la $a0, fib_msg         # load address of fib_msg
+    
     syscall
     li $t2, 0               # initialize first Fibonacci number
     li $t3, 1               # initialize second Fibonacci number
@@ -47,3 +48,9 @@ input_loop:
         subi $t4, $t4, 1    # decrement counter
         bnez $t4, fib_loop  # loop if not yet reached N
 
+
+   # Exit program
+    li $v0, 10              # syscall 10 for exit
+    syscall
+
+illegal_number:
